@@ -20,3 +20,5 @@
 
 # Nodejs modules
 /node_modules/
+
+/public/
