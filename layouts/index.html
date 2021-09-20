@@ -1,0 +1,33 @@
+{{ define "main" }}	
+	<section class="cta-section theme-bg-light py-5">
+		<div class="container text-center single-col-max-width">
+			<h2 class="heading">{{ .Title }}</h2>
+			<div class="intro">
+			<p>{{ .Description }}</p>
+			
+			</div>
+		</div><!--//container-->
+	</section>
+
+	<section class="overview-section p-3 p-lg-5">
+		<div class="container">
+			<h2 class="section-title font-weight-bold mb-3">Latest Articles</h2>
+			<div class="section-intro mb-5">Latest articles published on the site</div>
+		</div><!--//container-->
+	</section>
+
+	<section class="blog-list px-3 py-5 p-md-5">
+		<div class="container single-col-max-width">
+		{{ range where .Site.RegularPages "Section" "posts" }}
+            {{ .Render "li" }}
+        {{ end }}
+		</div>
+	</section>
+
+	<footer class="footer text-center py-2 theme-bg-dark">
+		
+		<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+		<small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+		
+	</footer>
+{{ end }}
