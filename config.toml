@@ -15,3 +15,8 @@ title = 'Éric St-Pierre'
     noClasses = true
     style = 'monokailight'
     tabWidth = 4
+
+[params]
+  github = "https://github.com/SanPeter"
+  linkedin = "https://www.linkedin.com/in/%C3%A9ric-st-pierre-0aa167145"
+  bio = "Hi, my name is Éric St-Pierre. Briefly introduce yourself here."
