@@ -4,6 +4,8 @@ title: 'What’s Inside Foundation – Features Folder – Introduction'
 draft: false
 date: 2020-02-12T22:00:00+00:00
 authors: ['Éric St-Pierre']
+categories:
+  - "What's Inside Foundation"
 tags:
   - episerver
   - foundation
