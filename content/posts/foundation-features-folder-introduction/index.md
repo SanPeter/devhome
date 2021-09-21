@@ -2,6 +2,11 @@
 type: posts
 title: 'What’s Inside Foundation – Features Folder – Introduction'
 draft: false
+date: 2020-02-12T22:00:00+00:00
+authors: ['Éric St-Pierre']
+tags:
+  - episerver
+  - foundation
 ---
 
 &#8220;What&#8217;s Inside Foundation&#8221; series will explore the different aspects and patterns used in Episerver reference implementation, Foundation.
