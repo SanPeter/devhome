@@ -2,6 +2,8 @@ baseURL = 'https://eric.st-pierre.xyz/'
 languageCode = 'en-us'
 title = 'Éric St-Pierre'
 
+summaryLength = 20
+
 [markup]
   [markup.highlight]
     anchorLineNos = false
