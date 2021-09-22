@@ -3,7 +3,7 @@ type: posts
 title: What’s Inside Foundation – Features Folder – Implementation
 draft: false
 date: 2020-02-19T12:00:59+00:00
-authors: ['Éric St-Pierre']
+authors: ['Eric St-Pierre']
 categories:
   - "What's Inside Foundation"
 tags:
