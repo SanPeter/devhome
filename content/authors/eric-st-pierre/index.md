@@ -1,6 +1,7 @@
 ---
 name: 'Éric St-Pierre'
 bio: 'Solution architect'
+profile: /images/profile.jpg
 sociallinks:
   - name: github
     class: fa-github-alt

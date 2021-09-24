@@ -36,9 +36,9 @@
 					{{ $path := printf "/%s/%s" "authors" ($name | urlize) }}
 					{{ with $.Site.GetPage $path }}
 					<div class="profile-section pt-3 pt-lg-0">
-						<img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >			
+						<img class="profile-image mb-3 rounded-circle mx-auto" src="{{ .Params.profile }}" alt="image" >			
 						
-						<div class="bio mb-3">{{ .Params.bio }}<br><a href="about.html">Find out more about me</a></div><!--//bio-->
+						<div class="bio mb-3">{{ .Params.bio }}<br><a href="{{ $path }}">Find out more about me</a></div><!--//bio-->
 						<ul class="social-list list-inline py-3 mx-auto">
 							{{ range .Params.sociallinks }}
 								<li class="list-inline-item"><a href="{{ .url }}"><i class="fab {{ .class }} fa-fw"></i></a></li>
