@@ -1,26 +1,42 @@
 {{ define "main" }}	
-	<section class="cta-section theme-bg-light py-5">
-		<div class="container text-center single-col-max-width">
-			<h2 class="heading">{{ .Title }}</h2>
-			<div class="intro">
+	<section class="py-5">
+		<div class="container text-center">
+			<h2 class="">{{ .Title }}</h2>
+			<div class="">
 			<p>{{ .Description }}</p>
 			
 			</div>
 		</div><!--//container-->
 	</section>
 
-	<section class="overview-section p-3 p-lg-5">
+	<section class="p-3 p-lg-5">
 		<div class="container">
-			<h2 class="section-title font-weight-bold mb-3">Latest Articles</h2>
-			<div class="section-intro">Latest articles published on the site</div>
+			<h2 class="font-weight-bold mb-3">Latest Articles</h2>
+			<div class="">Latest articles published on the site</div>
 		</div><!--//container-->
 	</section>
 
-	<section class="blog-list px-3 py-5 p-md-5">
-		<div class="container single-col-max-width">
-		{{ range (first 3 (where .Site.RegularPages "Section" "posts")).ByDate.Reverse }}
-            {{ .Render "li" }}
+	<section class="px-3 py-5 p-md-5">
+		<div class="container">
+		{{ range (first .Site.Params.featuredArticles (where .Site.RegularPages "Section" "posts")).ByDate.Reverse }}
+            {{ .Render "li-featured" }}
         {{ end }}
 		</div>
 	</section>
+
+	<section class="p-3 p-lg-5">
+		<div class="container">
+			<h2 class="font-weight-bold mb-3">More articles</h2>
+		</div><!--//container-->
+	</section>
+	
+	<section class="px-3 py-5 p-md-5">
+		<div class="container">
+			<div class="row row-cols-1 row-cols-md-2 g-4">
+			{{ range (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+				{{ .Render "li" }}
+			{{ end }}
+			</div>
+		</div>
+	</section>	
 {{ end }}

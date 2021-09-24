@@ -1,19 +1,32 @@
-<div class="item mb-5">
+{{/*  <div class="mb-5">
     <div class="row g-3 g-xl-0">
         <div class="col-2 col-xl-3">
-            <img class="img-fluid post-thumb " src="https://via.placeholder.com/150" alt="image">
+            <img class="img-fluid" src="https://via.placeholder.com/150" alt="image">
         </div>
         <div class="col">
-            <h3 class="title mb-1"><a class="text-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            <div class="meta mb-1">
+            <h3 class="mb-1"><a class="" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <div class="mb-1">
                 <span>By
                 {{ range .Param "authors" }}
                     {{ . }}
                 {{ end }}
                 </span>
-                <span class="date">{{ .Date.Format "January 2, 2006" }}</span></div>
-            <div class="intro">{{ .Summary }}</div>
-            <a class="text-link" href="{{ .RelPermalink }}">Read more &rarr;</a>
+                <span class="">{{ .Date.Format "January 2, 2006" }}</span></div>
+            <div class="">{{ .Summary }}</div>
+            <a class="" href="{{ .RelPermalink }}">Read more &rarr;</a>
         </div><!--//col-->
     </div><!--//row-->
-</div><!--//item-->
+</div><!--//item-->  */}}
+
+
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ .Title }}</h5>
+              {{/*  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>  */}}
+              <p class="card-text">{{ .Summary }}</p>
+              <a href="{{ .RelPermalink }}" class="card-link">Read More</a>
+            </div>
+          </div>
+    </div>
+

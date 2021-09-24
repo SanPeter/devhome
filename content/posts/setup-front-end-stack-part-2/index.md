@@ -2,6 +2,7 @@
 type: posts
 title: 'Solution Setup – Front-End stack – Part 2'
 draft: false
+new: true
 date: 2020-03-25T10:00:00+00:00
 authors: ['Eric St-Pierre']
 categories:

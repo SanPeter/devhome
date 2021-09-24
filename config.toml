@@ -2,7 +2,7 @@ baseURL = 'https://eric.st-pierre.xyz/'
 languageCode = 'en-us'
 title = 'Éric St-Pierre'
 
-summaryLength = 20
+summaryLength = 50
 
 [markup]
   [markup.highlight]
@@ -25,3 +25,5 @@ summaryLength = 20
 
 [params]
   authors = ["Eric St-Pierre"]
+  copyrightInfo = '© 2021 Éric St-Pierre'
+  featuredArticles = 2

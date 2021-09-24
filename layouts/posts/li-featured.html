@@ -1,0 +1,15 @@
+<div class="row mb-5 g-3 g-xl-0">
+    <div class="col">
+        <p class="mt-2 text-center text-muted">{{ with .Params.new }}<span class="badge bg-secondary">New</span>{{ end }} {{ .Date.Format "January 2, 2006" }}</p>
+        
+        <h3 class="mb-1 text-center"><a class="text-decoration-none" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <div class="mb-1">
+            <p class="text-center text-muted">By
+            {{ range .Param "authors" }}
+                {{ . }}
+            {{ end }}
+            </p>
+            
+        <div class="text-center">{{ .Summary }}</div>
+    </div><!--//col-->
+</div><!--//row-->
