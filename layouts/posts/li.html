@@ -23,6 +23,13 @@
         <div class="card h-100">
             <div class="card-body">
               <h5 class="card-title">{{ .Title }}</h5>
+              <div class="mb-1">
+                <p class="text-muted">By
+                {{ range .Param "authors" }}
+                    {{ . }}
+                {{ end }}
+                </p>
+            </div>
               {{/*  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>  */}}
               <p class="card-text">{{ .Summary }}</p>
               <a href="{{ .RelPermalink }}" class="card-link">Read More</a>
