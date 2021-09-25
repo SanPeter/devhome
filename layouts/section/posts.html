@@ -11,10 +11,11 @@
 
 <section class="px-3 py-5 p-md-5">
     <div class="container">
-
+        <div class="row row-cols-1 row-cols-md-3 g-4">
         {{ range (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
             {{ .Render "li" }}
         {{ end }}
+        </div>
     </div>
-</section>
+</section>	
 {{ end }}
