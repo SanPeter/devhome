@@ -2,24 +2,20 @@
 	<article class="px-3 py-5 p-md-5">
 		<div class="container">
 			<header class="">
-				<h2 class="mb-2">{{ .Title }}</h2>
+				<h1 class="mb-2">{{ .Title }}</h2>
 				<div class="mb-3">
-					<span>By
-					{{ range .Param "authors" }}
-						{{ . }}
-					{{ end }}
-					</span>
-					<span class="">{{ .Date.Format "January 2, 2006" }}</span>
-					{{/*  Categories  */}}
+					<p class="text-muted">By
+						{{ range .Param "authors" }}
+							{{ . }}
+						{{ end }}
+						<span>, {{ .Date.Format "January 2, 2006" }}</span>
+					</p>
 				</div>
 			</header>
 			
-			<div class="">
+			<div class="post-body">
 				{{ .Content }}
-
-				{{/*  Taxonomy  */}}
-				{{/*  <span class="badge theme-bg-light text-dark">episerver</span>
-				<span class="badge theme-bg-light text-dark">foundation</span>  */}}
-		</div><!--//container-->
+			</div>
+		</div>
 	</article>
 {{ end }}

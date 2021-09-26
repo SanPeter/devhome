@@ -1,0 +1,42 @@
+$theme-color: #198754;
+
+.post-body {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: $theme-color;
+  }
+
+  blockquote {
+    border-left: 0.5rem solid $theme-color;
+    padding-left: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    a {
+      display: block;
+      margin-top: 1rem;
+    }
+  }
+
+  .highlight {
+    pre {
+      padding: {
+        left: 0.75rem;
+        top: 0.5rem;
+        bottom: 0.5rem;
+      }
+    }
+  }
+}

@@ -19,14 +19,13 @@
     <!-- FontAwesome JS-->
 	<script defer src="/assets/fontawesome/js/all.min.js"></script>
 
-    {{/*  {{ $styles := resources.Get "scss/theme-1.scss" | resources.ToCSS }}
-    
+    {{ $styles := resources.Get "sass/main.scss" | resources.ToCSS }}
     {{ if .Site.IsServer }}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
     {{ else }}
       {{ $styles := $styles | resources.Minify | resources.Fingerprint  }}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
-    {{ end }}  */}}
+    {{ end }}
 
 </head>
 <body>
@@ -68,7 +67,7 @@
         {{ block "main" . }}{{ end }} 
     </div>
 
-	<footer class="p-3 mt-3 bg-{{ .Site.Params.colorTheme }} bg-opacity-50">
+	<footer class="p-3 bg-{{ .Site.Params.colorTheme }} bg-opacity-50">
 		<p>{{ .Site.Params.copyrightInfo }}</p>
 	</footer>
 	</div>
