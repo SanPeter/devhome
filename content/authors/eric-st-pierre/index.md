@@ -1,6 +1,6 @@
 ---
 name: 'Éric St-Pierre'
-bio: 'Solution architect'
+bio: 'Optimizely Content Cloud certified developer, working as a solution architect at Yaksa'
 profile: /images/profile.jpg
 sociallinks:
   - name: github
