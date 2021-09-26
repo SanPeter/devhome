@@ -17,7 +17,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- FontAwesome JS-->
-	{{/*  <script defer src="/assets/fontawesome/js/all.min.js"></script>  */}}
+	<script defer src="/assets/fontawesome/js/all.min.js"></script>
 
     {{/*  {{ $styles := resources.Get "scss/theme-1.scss" | resources.ToCSS }}
     
@@ -31,50 +31,8 @@
 </head>
 <body>
 	<div>
-	{{/*  <div style="padding-bottom: 60px;">  */}}
     <header>	    
-	    {{/*  <h1 class="blog-name pt-lg-4 mb-0"><a class="no-text-decoration" href="/">{{ .Site.Title }}</a></h1>
-        
-	    <nav class="navbar navbar-expand-lg navbar-dark" >
-           
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div id="navigation" class="collapse navbar-collapse flex-column" >
-				{{ range .Site.Params.authors }}
-					{{ $name := . }}
-					{{ $path := printf "/%s/%s" "authors" ($name | urlize) }}
-					{{ with $.Site.GetPage $path }}
-					<div class="profile-section pt-3 pt-lg-0">
-						<img class="profile-image mb-3 rounded-circle mx-auto" src="{{ .Params.profile }}" alt="image" >			
-						
-						<div class="bio mb-3">{{ .Params.bio }}<br><a href="{{ $path }}">Find out more about me</a></div><!--//bio-->
-						<ul class="social-list list-inline py-3 mx-auto">
-							{{ range .Params.sociallinks }}
-								<li class="list-inline-item"><a href="{{ .url }}"><i class="fab {{ .class }} fa-fw"></i></a></li>
-							{{ end }}
-						</ul><!--//social-list-->
-						<hr> 
-					</div><!--//profile-section-->
-					
-					<ul class="navbar-nav flex-column text-start">
-						<li class="nav-item">
-							<a class="nav-link <!--active-->" href="/posts/"><i class="fas fa-home fa-fw me-2"></i>Articles</a>
-						</li>
-
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ .RelPermalink }}"><i class="fas fa-user fa-fw me-2"></i>About Me</a>
-							</li>
-
-					</ul>
-					{{ end }}
-				{{ end }}				
-			</div>
-		</nav>  */}}
-
-		<nav class="navbar navbar-expand-lg navbar-light bg-primary bg-opacity-75">
+		<nav class="navbar navbar-expand-lg navbar-light bg-{{ .Site.Params.colorTheme }} bg-opacity-50">
 			<div class="container-fluid">
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -84,11 +42,17 @@
 					<a class="navbar-brand" href="/">{{ .Site.Title }}</a>
 					
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						{{/*  <li class="nav-item mt-1">
-							<a class="nav-item-social soc-instagram bg-light text-muted" target="blank" title="Instagram" href="{{ .Site.Params.instagram }}"></a>
-						</li>  */}}
-		
-						{{ range .Site.Sections }}
+						{{ range .Site.Params.authors }}
+						{{ $path := printf "/%s/%s" "authors" (. | urlize) }}
+						{{ with $.Site.GetPage $path }}
+							{{ range .Params.sociallinks }}
+								<li class="nav-item"><a href="{{ .url }}" class="nav-link"><i class="fab {{ .class }} fa-fw"></i></a></li>
+							{{ end }}
+						{{ end }}
+					{{ end }}
+			
+
+						{{ range (where .Site.Sections "Title" "Articles") }}
 							<li class="nav-item">
 								{{ $active := eq $.Section .Section }}
 								<a class="nav-link {{ if $active }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
@@ -100,17 +64,16 @@
 		</nav>		
     </header>
     
-    <div class="main-wrapper">
+    <div>
         {{ block "main" . }}{{ end }} 
-    </div><!--//main-wrapper-->   
+    </div>
 
-	<footer class="py-3 bg-primary bg-opacity-75">
+	<footer class="p-3 mt-3 bg-{{ .Site.Params.colorTheme }} bg-opacity-50">
 		<p>{{ .Site.Params.copyrightInfo }}</p>
 	</footer>
 	</div>
 
-	{{/*  <!-- Javascript -->          
-	<script src="/assets/plugins/popper.min.js"></script> 
-	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>   */}}
+	<!-- Bootstrap scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -27,3 +27,4 @@ summaryLength = 50
   authors = ["Eric St-Pierre"]
   copyrightInfo = '© 2021 Éric St-Pierre'
   featuredArticles = 2
+  colorTheme = "success"

@@ -1,5 +1,5 @@
 {{ define "main" }}	
-	<section class="py-5">
+	<section class="py-5 bg-{{ .Site.Params.colorTheme }} bg-opacity-10">
 		<div class="container text-center">
 			<h2 class="">{{ .Title }}</h2>
 			<div class="">
@@ -9,12 +9,12 @@
 		</div><!--//container-->
 	</section>
 
-	<section class="p-3 p-lg-5">
+	{{/*  <section class="p-3 p-lg-5">
 		<div class="container">
 			<h2 class="font-weight-bold mb-3">Latest Articles</h2>
 			<div class="">Latest articles published on the site</div>
-		</div><!--//container-->
-	</section>
+		</div>
+	</section>  */}}
 
 	<section class="px-3 py-5 p-md-5">
 		<div class="container">
@@ -33,7 +33,7 @@
 	<section class="px-3 py-2 p-md-2">
 		<div class="container">
 			<div class="row row-cols-1 row-cols-md-3 g-4">
-			{{ range (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+			{{ range (after 2 (where .Site.RegularPages "Section" "posts")).ByDate.Reverse }}
 				{{ .Render "li" }}
 			{{ end }}
 			</div>
