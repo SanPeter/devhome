@@ -3,6 +3,7 @@ type: posts
 title: What’s Inside Foundation – Features Folder – Implementation
 draft: false
 date: 2020-02-19T12:00:59+00:00
+previouslyPublished: true
 authors: ['Eric St-Pierre']
 categories:
   - "What's Inside Foundation"
@@ -212,4 +213,4 @@ Now we know how to implement the feature folder organization for model, pages, c
 - <https://marisks.net/2017/02/03/razor-view-engine-for-feature-folders/>
 
 [1]: /posts/foundation-features-folder-introduction/
-[2]: https://github.com/episerver/Foundation/blob/develop/src/Foundation.Cms/Display/FeaturesViewEngine.cs
+[2]: https://github.com/episerver/Foundation/blob/develop/src/Foundation/Infrastructure/Display/FeaturesViewEngine.cs

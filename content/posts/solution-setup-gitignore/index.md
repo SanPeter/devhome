@@ -3,6 +3,7 @@ type: posts
 title: 'Solution Setup – .gitignore'
 draft: false
 date: 2020-02-26T11:00:00+00:00
+previouslyPublished: true
 authors: ['Eric St-Pierre']
 categories:
   - 'Solution Setup'

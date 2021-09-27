@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Site.Title }}</title>
+
+	<title>
+        {{ block "title" . }}
+            {{ .Site.Title }}
+            {{ with .Params.Title }} | {{ . }}
+            {{ end }}
+        {{ end }}
+    </title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- FontAwesome JS-->
 	<script defer src="/assets/fontawesome/js/all.min.js"></script>
 
-    {{ $styles := resources.Get "scss/theme-1.scss" | resources.ToCSS }}
-    
+    {{ $styles := resources.Get "sass/main.scss" | resources.ToCSS }}
     {{ if .Site.IsServer }}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
     {{ else }}
@@ -18,66 +27,61 @@
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
     {{ end }}
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-530ZXSZ8L0"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-530ZXSZ8L0');
+	</script>
 </head>
 <body>
-
-    <header class="header text-center">	    
-	    <h1 class="blog-name pt-lg-4 mb-0"><a class="no-text-decoration" href="/">{{ .Site.Title }}</a></h1>
-        
-	    <nav class="navbar navbar-expand-lg navbar-dark" >
-           
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div id="navigation" class="collapse navbar-collapse flex-column" >
-				{{ range .Site.Params.authors }}
-					{{ $name := . }}
-					{{ $path := printf "/%s/%s" "authors" ($name | urlize) }}
-					{{ with $.Site.GetPage $path }}
-					<div class="profile-section pt-3 pt-lg-0">
-						<img class="profile-image mb-3 rounded-circle mx-auto" src="{{ .Params.profile }}" alt="image" >			
-						
-						<div class="bio mb-3">{{ .Params.bio }}<br><a href="{{ $path }}">Find out more about me</a></div><!--//bio-->
-						<ul class="social-list list-inline py-3 mx-auto">
-							{{ range .Params.sociallinks }}
-								<li class="list-inline-item"><a href="{{ .url }}"><i class="fab {{ .class }} fa-fw"></i></a></li>
-							{{ end }}
-						</ul><!--//social-list-->
-						<hr> 
-					</div><!--//profile-section-->
+	<div>
+    <header>	    
+		<nav class="navbar navbar-expand-lg navbar-light bg-{{ .Site.Params.colorTheme }} bg-opacity-50">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+		
+				<div class="collapse navbar-collapse" id="navbarToggler">
+					<a class="navbar-brand" href="/">{{ .Site.Title }}</a>
 					
-					<ul class="navbar-nav flex-column text-start">
-						<li class="nav-item">
-							<a class="nav-link <!--active-->" href="/posts/"><i class="fas fa-home fa-fw me-2"></i>Articles</a>
-						</li>
-
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ .RelPermalink }}"><i class="fas fa-user fa-fw me-2"></i>About Me</a>
-							</li>
-
-					</ul>
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+						{{ range .Site.Params.authors }}
+						{{ $path := printf "/%s/%s" "authors" (. | urlize) }}
+						{{ with $.Site.GetPage $path }}
+							{{ range .Params.sociallinks }}
+								<li class="nav-item"><a href="{{ .url }}" class="nav-link"><i class="fab {{ .class }} fa-fw"></i></a></li>
+							{{ end }}
+						{{ end }}
 					{{ end }}
-				{{ end }}				
-				{{/*  <div class="my-2 my-md-3">
-				    <a class="btn btn-primary" href="https://themes.3rdwavemedia.com/" target="_blank">Get in Touch</a>
-				</div>  */}}
+			
+
+						{{ range (where .Site.Sections "Title" "Articles") }}
+							<li class="nav-item">
+								{{ $active := eq $.Section .Section }}
+								<a class="nav-link {{ if $active }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
+							</li>
+					{{ end }}
+					</ul>
+				</div>
 			</div>
-		</nav>
+		</nav>		
     </header>
     
-    <div class="main-wrapper">
+    <div>
         {{ block "main" . }}{{ end }} 
-    </div><!--//main-wrapper-->   
+    </div>
 
-	<footer class="footer text-center py-2 theme-bg-dark">
-		<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-		<small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-	</footer>	
+	<footer class="p-3 bg-{{ .Site.Params.colorTheme }} bg-opacity-50">
+		<p>{{ .Site.Params.copyrightInfo }}</p>
+	</footer>
+	</div>
 
-	<!-- Javascript -->          
-	<script src="/assets/plugins/popper.min.js"></script> 
-	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+	<!-- Bootstrap scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>
