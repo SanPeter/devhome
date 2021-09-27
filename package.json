@@ -1,0 +1,24 @@
+{
+  "name": "devhome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanPeter/devhome.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanPeter/devhome/issues"
+  },
+  "homepage": "https://github.com/SanPeter/devhome#readme",
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "ftp-deploy": "^2.4.1"
+  }
+}
