@@ -4,6 +4,9 @@
 			<header class="">
 				<h1 class="mb-2">{{ .Title }}</h2>
 				<div class="mb-3">
+					{{ with .Params.previouslyPublished }}
+						<p class="text-muted">Previously published on Episerver Dispatch</p>
+					{{ end }}
 					<p class="text-muted">By
 						{{ range .Param "authors" }}
 							{{ . }}

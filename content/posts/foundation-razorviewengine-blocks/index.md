@@ -3,6 +3,7 @@ type: posts
 title: 'What’s Inside Foundation – Razor ViewEngine and Blocks'
 draft: false
 date: 2020-03-11T10:00:00+00:00
+previouslyPublished: true
 authors: ['Eric St-Pierre']
 categories:
   - "What's Inside Foundation"
