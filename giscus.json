@@ -1,0 +1,9 @@
+{
+    "origins": [
+      "https://eric.st-pierre.xyz",
+      "https://www.eric.st-pierre.xyz"
+    ],
+    "originsRegex": [
+      "http:\/\/localhost:[0-9]+"
+    ]
+  }
