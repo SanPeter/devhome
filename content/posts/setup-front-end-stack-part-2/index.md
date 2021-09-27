@@ -20,7 +20,7 @@ This is the second article on a discussion about CSS frameworks.&nbsp; In the [f
 
 I have chosen to go with an utility-class CSS framework because I wanted to see how this kind of framework pattern could help change the editor experience, and how we can give editors more freedom in building their website.
 
-## COVERING THE BASES
+## covering the bases
 
 To be able to use a CSS framework, we need to include the bases of the framework in the project and have some ways to customize it to meet our project requirements.
 
@@ -133,7 +133,7 @@ For the packaging tool, webpack could be a good option.
 
 From their documentation site, [webpack][7] is
 
-> &#8220;At its core, <strong>webpack</strong> is a <em>static module bundler</em> for modern JavaScript applications. When webpack processes your application, it internally builds a [dependency graph](https://webpack.js.org/concepts/dependency-graph/) which maps every module your project needs and generates one or more <em>bundles</em>.&#8221;
+> &#8220;At its core, <strong>webpack</strong> is a <em>static module bundler</em> for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more <em>bundles</em>.&#8221; > [webpack - dependency graph](https://webpack.js.org/concepts/dependency-graph/)
 
 PostCSS is already included with webpack, so you would need to add tailwindcss as a plugin in your postcss.config.js file:
 
@@ -200,7 +200,7 @@ There is a great [screencast][15] on the TailwindCSS site that can help you to s
 
 In this article, I went discussed the benefits of using a CSS framework and went thru the steps to include one such framework into an Episerver project.&nbsp; In the next article of this series, I&#8217;ll go into how we can use TailwindCSS to improve the content editor experience.
 
-[1]: posts/setup-front-end-stack-part-1/
+[1]: /posts/setup-front-end-stack-part-1/
 [2]: https://tailwindcss.com/docs/installation/#using-tailwind-via-cdn
 [3]: https://tailwindcss.com/course/setting-up-tailwind-and-postcss
 [4]: https://postcss.org/
