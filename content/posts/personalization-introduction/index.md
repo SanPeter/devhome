@@ -1,6 +1,6 @@
 ---
 type: posts
-title: 'Personalization'
+title: 'Personalization - An introduction'
 draft: false
 new: true
 date: 2021-09-29T10:00:00+00:00
