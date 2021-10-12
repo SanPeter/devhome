@@ -2,7 +2,7 @@
 type: posts
 title: 'Personalization - An introduction'
 draft: false
-new: true
+new: false
 date: 2021-09-29T10:00:00+00:00
 previouslyPublished: false
 authors: ['Eric St-Pierre']
