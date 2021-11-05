@@ -61,11 +61,11 @@
 					{{ end }}
 			
 
-						{{ range (where .Site.Sections "Title" "Articles") }}
-							<li class="nav-item">
-								{{ $active := eq $.Section .Section }}
-								<a class="nav-link {{ if $active }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
-							</li>
+					{{ range (where .Site.Sections "Title" "Articles") }}
+						<li class="nav-item">
+							{{ $active := eq $.Section .Section }}
+							<a class="nav-link {{ if $active }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
+						</li>
 					{{ end }}
 					</ul>
 				</div>

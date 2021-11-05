@@ -6,7 +6,7 @@ date: 2020-03-18T10:00:00+00:00
 previouslyPublished: true
 authors: ['Eric St-Pierre']
 categories:
-  - 'Solution Setup'
+  - solution-setup
 tags:
   - episerver
   - frontend

@@ -7,7 +7,7 @@ date: 2021-09-29T10:00:00+00:00
 previouslyPublished: false
 authors: ['Eric St-Pierre']
 categories:
-  - 'Personalization'
+  - personalization
 tags:
   - optimizely
   - personalization

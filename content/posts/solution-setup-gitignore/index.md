@@ -6,7 +6,7 @@ date: 2020-02-26T11:00:00+00:00
 previouslyPublished: true
 authors: ['Eric St-Pierre']
 categories:
-  - 'Solution Setup'
+  - solution-setup
 tags:
   - episerver
   - setup

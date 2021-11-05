@@ -14,6 +14,13 @@
 						<span>, {{ .Date.Format "January 2, 2006" }}</span>
 					</p>
 				</div>
+
+				
+				{{ range .Param "categories" }}
+					{{ with $.Site.GetPage (printf "/%s/%s" "categories" .) }}
+						<p>This article is part of the series <a href="{{ .Permalink }}">{{ .Title }} </a></p>
+					{{ end }}
+				{{ end }}
 			</header>
 			
 			<div class="post-body">
