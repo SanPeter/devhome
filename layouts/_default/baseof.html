@@ -15,18 +15,20 @@
         {{ end }}
     </title>
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-    <!-- FontAwesome JS-->
+	<!-- FontAwesome JS-->
 	<script defer src="/assets/fontawesome/js/all.min.js"></script>
 
-    {{ $styles := resources.Get "sass/main.scss" | resources.ToCSS }}
+	<!-- TailwindCSS -->
+    {{ $styles := resources.Get "css/styles.css" | postCSS }}
     {{ if .Site.IsServer }}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
     {{ else }}
-      {{ $styles := $styles | resources.Minify | resources.Fingerprint  }}
+      {{ $styles := $styles | resources.Minify | resources.Fingerprint | resources.PostProcess  }}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
     {{ end }}
+	<!-- end TailwindCSS CSS -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-530ZXSZ8L0"></script>
@@ -41,7 +43,7 @@
 <body>
 	<div>
     <header>	    
-		<nav class="navbar navbar-expand-lg navbar-light bg-{{ .Site.Params.colorTheme }} bg-opacity-50">
+		<nav class="navbar navbar-expand-lg navbar-light bg-{{ .Site.Params.colorTheme }} bg-opacity-50"></nav>
 			<div class="container-fluid">
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
