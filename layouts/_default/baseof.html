@@ -15,7 +15,7 @@
         {{ end }}
     </title>
 
-	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
 
 	<!-- FontAwesome JS-->
 	<script defer src="/assets/fontawesome/js/all.min.js"></script>
@@ -75,6 +75,8 @@
 		</nav>		
     </header>
     
+	<button class="inline-block px-4 py-3 text-sm font-semibold text-center text-white uppercase transition duration-200 ease-in-out bg-indigo-500 rounded-md cursor-pointer hover:bg-indigo-600">Tailwind Button</button>
+	<button class="btn btn-primary">daisyUI Button</button>
     <div>
         {{ block "main" . }}{{ end }} 
     </div>
