@@ -6,7 +6,7 @@ date: 2020-02-12T22:00:00+00:00
 previouslyPublished: true
 authors: ['Eric St-Pierre']
 categories:
-  - "What's Inside Foundation"
+  - whats-inside-foundation
 tags:
   - episerver
   - foundation
