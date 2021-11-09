@@ -26,3 +26,5 @@
 # Environment variables
 .env
 /config/_default/*.toml
+
+.vs/

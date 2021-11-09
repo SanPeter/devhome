@@ -1,0 +1,20 @@
+{{ define "main"}}
+<section class="py-5 bg-{{ .Site.Params.colorTheme }} bg-opacity-10">
+    <div class="container text-center">
+        <h2 class="">{{ .Title }}</h2>
+        <div class="">
+        <p> {{ .Description }}</p>
+        
+        </div>
+    </div><!--//container-->
+</section>
+<section class="px-3 py-5 p-md-5">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{ range .Pages.ByDate }}
+            {{ .Render "li" }}
+        {{ end }}
+        </div>
+    </div>
+</section>	
+{{ end }}
