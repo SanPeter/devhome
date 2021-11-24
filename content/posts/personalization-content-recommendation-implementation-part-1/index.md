@@ -43,7 +43,7 @@ By adding this package to your solution, the script would be included to your pa
 
 An anonymous user profile is created when a visitor accesses the site for the first time. This profile allows us to aggregate the data tracked for a specific user. We can see which pages of the site the user visited, and with which type of content the visitor interacted with.
 
-![Untitled](images/user-tracking.png)
+![user tracking](images/user-tracking.png)
 
 One thing to note, at the time of this writing, is that this user profile is different from the Optimizely Visitor Intelligence profile. But there is a plan to aggregate all those tracking information into one unified profile in the Optimizely Data Platform.
 
@@ -55,9 +55,9 @@ Content ingestion is an organic process, it’s not something that is done with 
 
 One part of the ingestion process is to assign Section to the content, using flows. Section are tags that are added to our content. They are used to configure the which content is used for delivery. Sections are added to content base on rules that are defined in Flows. Flows allow us to define some rules that a content item must match to be assigned to a Section.
 
-![Untitled](images/sections.png)
+![sections](images/sections.png)
 
-![Untitled](images/flows.png)
+![flows](images/flows.png)
 
 ## Dashboards
 
@@ -65,23 +65,23 @@ Within the package of Optimizely Content Recommendation, we get a series of dash
 
 The **Insight Dashboard** shows us how topics perform based on the interactions (views on page), the unique IP addresses that visited the site and the interactions per unique visitors.
 
-![Untitled](images/insight-dashboard.png)
+![insight dashbaord](images/insight-dashboard.png)
 
 The **Topics in Content** shows the number of interactions with content in which a topic appears. This can help you measure if your content and topics are consumed as you expect them to.
 
-![Untitled](images/topics-in-content.png)
+![topics in content](images/topics-in-content.png)
 
 The **Topic Performance** graph shows the volume of content profiles versus the unique visit.
 
-![Untitled](images/topic-performance.png)
+![topic performance](images/topic-performance.png)
 
 The **Content Utilization** view shows a graphical representation of topic performance.
 
-![Untitled](images/content-utilization.png)
+![content utilization](images/content-utilization.png)
 
 The **Goals** dashboard shows conversions. Goals are interactions that you want your visitor to perform. Example of goals could be to fill a form, download a document, view a specific number of pages in a section. Goals tracking can help you see if you content is engaging people.
 
-![Untitled](images/goals.png)
+![goals](images/goals.png)
 
 Goals tracking can be done by adding the following Javascript directly to your site or by integrating it through Google Tag Manager.
 
@@ -98,6 +98,6 @@ An example of a Google Tag Manager can be seen at the following link.
 
 The **Engage Dashboard** shows the deliveries performance. Deliveries are used when we want to render content to a visitor based on previous interactions and its interests based on analytics.
 
-![Untitled](images/engage-dashboard.png)
+![engage dashboard](images/engage-dashboard.png)
 
 In this article, I covered the integration of the Content Recommendation packages, how user and content are tracked, and the dashboards provided with the product. In the next article, I will also cover the different ways to deliver the content in an Optimizely solution or on any other site that is including the Content Recommendation script.
