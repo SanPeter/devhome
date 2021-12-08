@@ -2,7 +2,7 @@
 type: posts
 title: 'Personalization - Content recommendation - Implementation (part 1)'
 draft: false
-new: true
+new: false
 date: 2021-11-23T10:00:00+00:00
 previouslyPublished: false
 authors: ['Eric St-Pierre']
