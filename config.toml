@@ -25,6 +25,6 @@ summaryLength = 50
 
 [params]
   authors = ["Eric St-Pierre"]
-  copyrightInfo = '© 2021 Éric St-Pierre'
+  copyrightInfo = '© 2022 Éric St-Pierre'
   featuredArticles = 2
   colorTheme = "success"
