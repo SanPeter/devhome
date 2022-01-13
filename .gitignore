@@ -28,3 +28,4 @@
 /config/_default/*.toml
 
 .vs/
+.DS_Store
