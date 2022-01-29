@@ -1,0 +1,32 @@
+<header class="w-100 bg-{{ .Site.Params.colorTheme }} bg-opacity-50">	    
+    <nav class="w-100 mx-auto navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <a class="ps-3 navbar-brand" href="/">{{ .Site.Title }}</a>
+                
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    {{ range .Site.Params.authors }}
+                    {{ $path := printf "/%s/%s" "authors" (. | urlize) }}
+                    {{ with $.Site.GetPage $path }}
+                        {{ range .Params.sociallinks }}
+                            <li class="nav-item"><a href="{{ .url }}" class="nav-link"><i class="fab {{ .class }} fa-fw"></i></a></li>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+        
+
+                {{ range (where .Site.Sections "Title" "Articles") }}
+                    <li class="nav-item">
+                        {{ $active := eq $.Section .Section }}
+                        <a class="nav-link {{ if $active }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
+                    </li>
+                {{ end }}
+                </ul>
+            </div>
+        </div>
+    </nav>		
+</header>

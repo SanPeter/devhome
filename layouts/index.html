@@ -1,4 +1,4 @@
-{{ define "main" }}	
+{{ define "main" }}	 
 	<section class="py-5 bg-{{ .Site.Params.colorTheme }} bg-opacity-10">
 		<div class="container text-center">
 			<h2 class="">{{ .Title }}</h2>
@@ -6,43 +6,38 @@
 			<p>{{ .Description }}</p>
 			
 			</div>
-		</div><!--//container-->
-	</section>
-
-	{{/*  <section class="p-3 p-lg-5">
-		<div class="container">
-			<h2 class="font-weight-bold mb-3">Latest Articles</h2>
-			<div class="">Latest articles published on the site</div>
-		</div>
-	</section>  */}}
-
-	<section class="px-3 py-5 p-md-5">
-		<div class="container">
-		{{ range (first .Site.Params.featuredArticles (where .Site.RegularPages "Section" "posts")).ByDate.Reverse }}
-            {{ .Render "li-featured" }}
-        {{ end }}
 		</div>
 	</section>
 
-	<section class="p-3 p-lg-5">
-		<div class="container">
-			<h2 class="font-weight-bold border-top pt-3">Latest articles</h2>
-		</div><!--//container-->
-	</section>
+	<div class="mx-auto px-lg-5">
+		<section class="px-3 py-5 p-md-5">
+			<div class="container">
+			{{ range (first .Site.Params.featuredArticles (where .Site.RegularPages "Section" "posts")).ByDate.Reverse }}
+				{{ .Render "li-featured" }}
+			{{ end }}
+			</div>
+		</section>
+
+		<section class="p-3 p-lg-5">
+			<div class="container">
+				<h2 class="font-weight-bold border-top pt-3">Latest articles</h2>
+			</div>
+		</section>
 	
-	<section class="px-3 py-2 p-md-2">
-		<div class="container">
-			<div class="row row-cols-1 row-cols-md-3 g-4">
-			{{ range first .Site.Params.articlesPerPage (after .Site.Params.featuredArticles (where .Site.RegularPages "Section" "posts")).ByDate.Reverse }}
-				{{ .Render "li" }}
-			{{ end }}
-			</div>
+		<section class="px-3 py-2 p-md-2">
+			<div class="container">
+				<div class="row row-cols-1 row-cols-md-3 g-4">
+				{{ range first .Site.Params.articlesPerPage (after .Site.Params.featuredArticles (where .Site.RegularPages "Section" "posts")).ByDate.Reverse }}
+					{{ .Render "li" }}
+				{{ end }}
+				</div>
 
-			<div class="my-3">
-			{{ range (where .Site.Sections "Title" "Articles") }}
-				<a class="link-success" href="{{ .Permalink }}">More {{ .Title }}...</a>
-			{{ end }}
+				<div class="my-3">
+				{{ range (where .Site.Sections "Title" "Articles") }}
+					<a class="link-success" href="{{ .Permalink }}">More {{ .Title }}...</a>
+				{{ end }}
+				</div>
 			</div>
-		</div>
-	</section>	
+		</section>
+	</div>	
 {{ end }}
