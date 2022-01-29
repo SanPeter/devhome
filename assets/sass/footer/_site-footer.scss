@@ -1,0 +1,19 @@
+.footer {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  
+    & p {
+      font-size: 0.75rem !important;
+    }
+  
+    a {
+      color: var(--bs-body-color);
+  
+      &:hover {
+        color: #0d6efd;
+        text-decoration: underline;
+   
+      }
+    }
+  }
+  
