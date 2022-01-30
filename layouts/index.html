@@ -1,7 +1,7 @@
 {{ define "main" }}	 
-	<section class="py-5 bg-{{ .Site.Params.colorTheme }} bg-opacity-10">
+	<section class="py-5">
 		<div class="container text-center">
-			<h2 class="">{{ .Title }}</h2>
+			<h1 class="fw-bold">{{ .Title }}</h2>
 			<div class="">
 			<p>{{ .Description }}</p>
 			
@@ -34,7 +34,7 @@
 
 				<div class="my-3">
 				{{ range (where .Site.Sections "Title" "Articles") }}
-					<a class="link-success" href="{{ .Permalink }}">More {{ .Title }}...</a>
+					<a class="" href="{{ .Permalink }}">More {{ .Title }}...</a>
 				{{ end }}
 				</div>
 			</div>

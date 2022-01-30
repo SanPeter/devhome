@@ -1,4 +1,4 @@
-$theme-color: #198754;
+//$theme-color: #198754;
 
 .post-body {
   h2,
@@ -15,13 +15,13 @@ $theme-color: #198754;
     }
   }
 
-  a {
-    color: $theme-color;
-  }
+  // a {
+  //   color: $theme-color;
+  // }
 
   blockquote {
     border: {
-      left: 0.5rem solid $theme-color;
+      left: 0.5rem solid; // $theme-color;
     }
     padding: {
       left: 1rem;

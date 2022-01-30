@@ -18,7 +18,7 @@
 				
 				{{ range .Param "categories" }}
 					{{ with $.Site.GetPage (printf "/%s/%s" "categories" .) }}
-						<p>This article is part of the <a class="link-success" href="{{ .Permalink }}">{{ .Title }}</a> series.</p>
+						<p>This article is part of the <a class="" href="{{ .Permalink }}">{{ .Title }}</a> series.</p>
 					{{ end }}
 				{{ end }}
 			</header>
