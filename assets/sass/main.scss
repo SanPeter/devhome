@@ -1,2 +1,28 @@
+@import "../../node_modules/nord/src/sass/nord.scss";
+
+// Option A: Include all of Bootstrap
+// Include any default variable overrides here (though functions won't be available)
+$body_bg: #fff;
+$body_color: $nord3;
+
+$theme-colors: (
+  "primary": $nord3,
+  "secondary": $nord6,
+  //"success": $nord14,
+  //"danger": $nord11,
+  //"warning": $nord13,
+  //"info": $nord8,
+  //"light": $nord5,
+  //"dark": $nord0,
+  //"white": $nord6,
+);
+
+$link-color: $nord10;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+// 6. Add additional custom code here
 @import 'footer/site-footer';
 @import 'posts';
