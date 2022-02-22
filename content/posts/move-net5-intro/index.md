@@ -2,7 +2,7 @@
 type: posts
 title: 'The move to .NET5'
 draft: false
-new: true
+new: false
 date: 2022-02-15T10:00:00+00:00
 previouslyPublished: false
 authors: ['Eric St-Pierre']
