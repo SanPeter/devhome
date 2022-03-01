@@ -2,7 +2,7 @@
 type: posts
 title: 'What are the benefits of moving to a .NET5 Optimizely implementation?'
 draft: false
-new: true
+new: false
 date: 2022-02-22T10:00:00+00:00
 previouslyPublished: false
 authors: ['Eric St-Pierre']
