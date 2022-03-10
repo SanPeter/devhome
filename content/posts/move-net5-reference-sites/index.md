@@ -2,7 +2,7 @@
 type: posts
 title: 'What are the Optimizely implementation references for .NET5 sites?'
 draft: false
-new: true
+new: false
 date: 2022-03-01T10:00:00+00:00
 previouslyPublished: false
 authors: ['Eric St-Pierre']
