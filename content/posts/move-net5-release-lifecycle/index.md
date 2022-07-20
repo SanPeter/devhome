@@ -2,7 +2,7 @@
 type: posts
 title: 'What will the .NET release cycle look like?'
 draft: false
-new: true
+new: false
 date: 2022-03-10T10:00:00+00:00
 previouslyPublished: false
 authors: ['Eric St-Pierre']

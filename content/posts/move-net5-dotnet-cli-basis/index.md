@@ -1,8 +1,8 @@
 ---
 type: posts
-title: 'Dotnet cli basis'
+title: 'Dotnet CLI basis'
 draft: false
-new: true
+new: false
 date: 2022-04-26T10:00:00+00:00
 previouslyPublished: false
 authors: ['Eric St-Pierre']
@@ -14,7 +14,7 @@ tags:
   - net5
 ---
 
-This is the first article in a 3-part series on how to create an Optimizely based on the .NET5 framework.  In this first artciel, I will cover the basics of the donet cli tools.  In the second article, I will cover the templates that are available to create Optimizely sites.  In the third article, I will cover how to create Optimizely sites, and how to configure them.
+This is the first article in a 3-part series on how to create an Optimizely based on the .NET5 framework.  In this first article, I will cover the basics of the donet cli tools.  In the second article, I will cover the templates that are available to create Optimizely sites.  In the third article, I will cover how to create Optimizely sites, and how to configure them.
 
 In a [previous article](https://eric.st-pierre.xyz/posts/move-net5-reference-sites/), I discussed the different options to start a site from one of the examples or reference Optimizely sites.  But how to you proceed if you want to start a new Optimizely project from scratch? 
 
