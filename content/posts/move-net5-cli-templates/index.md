@@ -2,7 +2,7 @@
 type: posts
 title: 'Dotnet CLI templates'
 draft: false
-new: true
+new: false
 date: 2022-07-19T10:00:00+00:00
 previouslyPublished: false
 authors: ['Eric St-Pierre']
